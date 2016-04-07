@@ -53,8 +53,8 @@ func NewFastHTTPEchoAdaptor(h http.Handler) echo.HandlerFunc  {
 			}
 		}
 
-		if strings.Contains(c.Response().Header().Get(echo.ContentType), textPlainContentType) {
-			c.Response().Header().Set(echo.ContentType, http.DetectContentType(w.body))
+		if strings.Contains(c.Response().Header().Get(echo.HeaderContentType), textPlainContentType) {
+			c.Response().Header().Set(echo.HeaderContentType, http.DetectContentType(w.body))
 		}
 		c.Response().Write(w.body)
 		return nil
