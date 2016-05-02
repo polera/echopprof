@@ -6,14 +6,14 @@ import (
 )
 
 func Wrap(e *echo.Echo) {
-	e.Get("/debug/pprof/", fromHandlerFunc(pprof.Index).Handle)
-	e.Get("/debug/pprof/heap", fromHTTPHandler(pprof.Handler("heap")).Handle)
-	e.Get("/debug/pprof/goroutine", fromHTTPHandler(pprof.Handler("goroutine")).Handle)
-	e.Get("/debug/pprof/block", fromHTTPHandler(pprof.Handler("block")).Handle)
-	e.Get("/debug/pprof/threadcreate", fromHTTPHandler(pprof.Handler("threadcreate")).Handle)
-	e.Get("/debug/pprof/cmdline", fromHandlerFunc(pprof.Cmdline).Handle)
-	e.Get("/debug/pprof/profile", fromHandlerFunc(pprof.Profile).Handle)
-	e.Get("/debug/pprof/symbol", fromHandlerFunc(pprof.Symbol).Handle)
+	e.GET("/debug/pprof/", fromHandlerFunc(pprof.Index).Handle)
+	e.GET("/debug/pprof/heap", fromHTTPHandler(pprof.Handler("heap")).Handle)
+	e.GET("/debug/pprof/goroutine", fromHTTPHandler(pprof.Handler("goroutine")).Handle)
+	e.GET("/debug/pprof/block", fromHTTPHandler(pprof.Handler("block")).Handle)
+	e.GET("/debug/pprof/threadcreate", fromHTTPHandler(pprof.Handler("threadcreate")).Handle)
+	e.GET("/debug/pprof/cmdline", fromHandlerFunc(pprof.Cmdline).Handle)
+	e.GET("/debug/pprof/profile", fromHandlerFunc(pprof.Profile).Handle)
+	e.GET("/debug/pprof/symbol", fromHandlerFunc(pprof.Symbol).Handle)
 }
 
 var Wrapper = Wrap
