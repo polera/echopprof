@@ -14,7 +14,6 @@ func Wrap(e *echo.Echo) {
 	e.GET("/debug/pprof/cmdline", fromHandlerFunc(pprof.Cmdline).Handle)
 	e.GET("/debug/pprof/profile", fromHandlerFunc(pprof.Profile).Handle)
 	e.GET("/debug/pprof/symbol", fromHandlerFunc(pprof.Symbol).Handle)
-	e.POST("/debug/pprof/symbol", fromHandlerFunc(pprof.Symbol).Handle)
 }
 
 var Wrapper = Wrap
